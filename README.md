@@ -14,7 +14,7 @@ Help doc:
 *****BUGS: Fix them manually****** 
 - In the final Excel output, look for cells that have 5 rows filled. In cases where the words are long it may spill over into adjacent cells which are subsequently overwritten.
 - Correct "until Full Night"
-
+- Quick lookup for long content. Open 'drikCalendarPHX-Vakyam.txt' and look for lines longer than 250words. These are potential candidates for spillovers
 
 Automation Todos:
 - Fix bug: Correct "until Full Night" with "Full Night"
