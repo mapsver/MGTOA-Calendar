@@ -14,7 +14,7 @@ from collections import defaultdict
 
 #lookupTagSet = ['Tithi', 'Nakshatra', 'Skipped Tithi', 'Skipped Nakshatra']
 lookupTagSet = ['Tithi', 'Nakshathram', 'Skipped Tithi', 'Skipped Nakshathram']
-browser = webdriver.Firefox()
+browser = webdriver.Chrome()
 
 def main():
 
@@ -25,9 +25,12 @@ def main():
 
 # Switch to Vakyam
     firstDateUrl="http://www.drikpanchang.com/tamil/tamil-month-panchangam.html?date=01/01/2016"
+    firstDateUrl= r"https://www.drikpanchang.com/tamil/tamil-month-panchangam.html?date=01/01/2016&time-format=24plushour"
+
     browser.get(firstDateUrl)
     browser.execute_script("handlePanchangArithmeticOptionClick('suryasiddhanta')") # switches to Vakyam panchangam
-    browser.execute_script("handleTimeFormatOptionClick('24plushour')")
+    
+    #browser.execute_script("handleTimeFormatOptionClick('24plushour')")
     #dont use this--- #browser.execute_script("switchToMoArith()")  # switches to Thiru Ganita panchangam
     time.sleep(0.5)
 
@@ -35,15 +38,15 @@ def main():
     fname = 'drikCalendarPHX-Vakyam.txt'
     with open(fname, 'w') as outf:
         # 08/12/2019
-        dateObj = datetime.datetime(2019, 12, 8)    # SET Start Date (yyyy, mm, dd)
+        dateObj = datetime.datetime(2020, 1, 1)    # SET Start Date (yyyy, mm, dd)
         nextDate = dateObj.strftime("%d/%m/%Y")
         outf.write('Start-Time: ' + datetime.datetime.now().strftime("%d/%m/%Y %H:%M:%S"))
         outf.write("\n\nDate, Tithi, Nakshatra, Skipped Tithi, Skipped Nakshatra, \n")
 
-        while nextDate != "01/01/2020":                 # SET End Date (dd/mm/yyyy)
+        while nextDate != "01/01/2021":                 # SET End Date (dd/mm/yyyy)
             time.sleep(5.0)
             outf.write(nextDate + ', ')
-            url = "http://www.drikpanchang.com/tamil/tamil-month-panchangam.html?date=" + nextDate
+            url = "http://www.drikpanchang.com/tamil/tamil-month-panchangam.html?date=" + nextDate + "&time-format=24plushour"
             returnPairs = getPairs(url)
 
             tithiValList = returnPairs.get(lookupTagSet[0], ' ')

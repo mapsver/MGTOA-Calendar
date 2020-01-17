@@ -18,7 +18,7 @@ def Mbox(title, text, style):
 
 globRow = 1
 ##### CHANGE globCol EVERY YEAR. Sunday = -1.
-globCol = 1 #Jan 1,2019 is a tuesday (so globCol = 1)
+globCol = 2 #Jan 1,2020 is a WED (so globCol = 2)
 currMonthName = ""
 currDay = ""
 globTithiInfo = ""
@@ -103,7 +103,7 @@ def main():
     inf.close()
     SetColumnWidth()
     ##wbook.save("excel-2015-TGanita.xls")
-    wbook.save("excel-2019-Vakyam.xls")
+    wbook.save("excel-2020-Vakyam.xls")
 
 def SetColumnWidth():
     colWidth = 4699.53

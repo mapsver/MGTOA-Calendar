@@ -1,0 +1,30 @@
+Start-Time: 28/10/2018 08:02:44
+
+Date, Tithi, Nakshatra, Skipped Tithi, Skipped Nakshatra, 
+08/12/2019, Duvadasi upto 20:22, Aswini upto 14:46,  ,  , 
+09/12/2019, Thirayodasi upto 21:30, Bharani upto 16:31,  ,  , 
+10/12/2019, Sathuradasi upto 22:09, Karthigai upto 17:48,  ,  , 
+11/12/2019, Pournami upto 22:17, Rohini upto 18:35,  ,  , 
+12/12/2019, Pirathamai upto 21:54, Mirugasirisham upto 18:52,  ,  , 
+13/12/2019, Thuthiyai upto 21:03, Thiruvathirai upto 18:41,  ,  , 
+14/12/2019, Thiruthiyai upto 19:46, Punarpoosam upto 18:05,  ,  , 
+15/12/2019, Sathurthi upto 18:08, Poosam upto 17:07,  ,  , 
+16/12/2019, Panjami upto 16:12, Ayilyam upto 15:52,  ,  , 
+17/12/2019, Shasti upto 14:03, Magam upto 14:23,  ,  , 
+18/12/2019, Sapthami upto 11:45, Pooram upto 12:47,  ,  , 
+19/12/2019, Astami upto 09:23, Uthiram upto 11:06, Navami upto 31:03+,  , 
+20/12/2019, Thasami upto 28:49+, Hastham upto 09:28,  ,  , 
+21/12/2019, Egadashi upto 26:46+, Chithirai upto 07:56,  , Swathi upto 30:36+, 
+22/12/2019, Duvadasi upto 24:59+, Visakam upto 29:31+,  ,  , 
+23/12/2019, Thirayodasi upto 23:31, Anusham upto 28:47+,  ,  , 
+24/12/2019, Sathuradasi upto 22:27, Kettai upto 28:26+,  ,  , 
+25/12/2019, Amavasai upto 21:50, Moolam upto 28:33+,  ,  , 
+26/12/2019, Pirathamai upto 21:43, Pooradam upto 29:09+,  ,  , 
+27/12/2019, Thuthiyai upto 22:06, Uthiradam upto 30:15+,  ,  , 
+28/12/2019, Thiruthiyai upto 23:01, Thiruvonam upto Full Night,  ,  , 
+29/12/2019, Sathurthi upto 24:24+, Thiruvonam upto 07:50,  ,  , 
+30/12/2019, Panjami upto 26:11+, Avittam upto 09:51,  ,  , 
+31/12/2019, Shasti upto 28:14+, Sathayam upto 12:12,  ,  , 
+
+
+End-Time: 28/10/2018 08:09:20
