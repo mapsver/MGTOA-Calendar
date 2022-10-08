@@ -18,10 +18,9 @@
 	- Rename the output XL file name with the correct year
 - XL output Manual FORMATTING: 
 	- Delete the 'first' tab
-	- From previous yr XL, Copy the first row (month name) and change the year
-	- From previous yr XL, Copy the Week days row
 
 *****BUGS: Fix them manually*****
+- Check for any sheets with the string 'ERROR'.
 - In the final Excel output, look for cells that have 5 rows filled. In cases where the words are long it may spill over into adjacent cells which are subsequently overwritten.
 - Quick lookup for long content. Open 'drikCalendarPHX-Vakyam.txt' and look for lines longer than 80chars. These are potential candidates for spillovers.
 - Replace "until Full Night" with "Full Night"
@@ -29,6 +28,3 @@
 *****Automation Todos*****
 - Fix bug: Correct "upto Full Night" with "Full Night"
 	- some how when writing "upto Full Night" .. some cells are missing the word "Night" (noticed only for Tithi)
-- Fix bug: When all 
-- Add DaysOfTheWeek row
-- Add NameOfMonth row
