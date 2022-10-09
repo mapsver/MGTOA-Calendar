@@ -19,8 +19,7 @@
 	- if extraction was run multiple times, make sure the data is consolidated into a single txt file called 'drikCalendarPHX-Vakyam.txt'.
 - Execute excelWriter-rev2.py for excel output. 
 	- Requires all the input to be in a single txt file in the same dir called 'drikCalendarPHX-Vakyam.txt'.
-- XL output Manual FORMATTING: 
-	- Delete the 'first' tab
+- Save .xls file as .xlsx
 
 *****BUGS: Fix them manually*****
 - Check for any sheets with the string 'ERROR'.
