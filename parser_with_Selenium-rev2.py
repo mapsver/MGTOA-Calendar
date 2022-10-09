@@ -25,8 +25,8 @@ def main():
 	time.sleep(0.5)
 
 # Switch to Vakyam
-	firstDateUrl="http://www.drikpanchang.com/tamil/tamil-month-panchangam.html?date=01/01/2016"
-	firstDateUrl= r"https://www.drikpanchang.com/tamil/tamil-month-panchangam.html?date=01/01/2016&time-format=24plushour"
+	firstDateUrl="http://www.drikpanchang.com/tamil/tamil-month-panchangam.html?date=01/01/2023"
+	firstDateUrl= r"https://www.drikpanchang.com/tamil/tamil-month-panchangam.html?date=01/01/2023&time-format=24plushour"
 
 	browser.get(firstDateUrl)
 	browser.execute_script("handlePanchangArithmeticOptionClick('suryasiddhanta', true)") # switches to Vakyam panchangam
@@ -36,15 +36,14 @@ def main():
 	time.sleep(0.5)
 
 # Get started
-	fname = 'drikCalendarPHX-Vakyam_Jul15-Dec31.txt'
+	fname = 'drikCalendarPHX-Vakyam.txt'
 	with open(fname, 'w') as outf:
-		# 08/12/2019
-		dateObj = datetime.datetime(2022, 7, 15)    # SET Start Date (yyyy, mm, dd)
+		dateObj = datetime.datetime(2023, 11, 8)    # SET Start Date (yyyy, mm, dd)
 		nextDate = dateObj.strftime("%d/%m/%Y")
 		outf.write('Start-Time: ' + datetime.datetime.now().strftime("%d/%m/%Y %H:%M:%S"))
 		outf.write("\n\nDate, Tithi, Nakshatra, Skipped Tithi, Skipped Nakshatra, \n")
 
-		while nextDate != "01/01/2023":                 # SET End Date (dd/mm/yyyy)
+		while nextDate != "01/01/2024":                 # SET End Date (dd/mm/yyyy)
 			time.sleep(4.0)
 			outf.write(nextDate + ', ')
 			url = "http://www.drikpanchang.com/tamil/tamil-month-panchangam.html?date=" + nextDate + "&time-format=24plushour"
