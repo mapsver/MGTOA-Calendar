@@ -20,6 +20,7 @@
 - Execute excelWriter-rev2.py for excel output. 
 	- Requires all the input to be in a single txt file in the same dir called 'drikCalendarPHX-Vakyam.txt'.
 - Save .xls file as .xlsx
+- Archive the extracted .txt and final .xlsx in the OutputArchive dir
 
 *****BUGS: Fix them manually*****
 - Check for any sheets with the string 'ERROR'.
