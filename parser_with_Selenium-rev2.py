@@ -10,12 +10,17 @@ from urllib.request import urlopen
 from bs4 import BeautifulSoup
 #from ghost import Ghost
 from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 from collections import defaultdict
 
 #lookupTagSet = ['Tithi', 'Nakshatra', 'Skipped Tithi', 'Skipped Nakshatra']
 lookupTagSet = ['Tithi', 'Nakshathram', 'Skipped Tithi', 'Skipped Nakshathram']
-browser = webdriver.Chrome(ChromeDriverManager().install())
+#browser = webdriver.Chrome(ChromeDriverManager().install())
+
+options = webdriver.ChromeOptions()
+s = Service(ChromeDriverManager().install())
+browser = webdriver.Chrome(service=s, options=options)
 
 def main():
 
@@ -25,11 +30,11 @@ def main():
 	time.sleep(0.5)
 
 # Switch to Vakyam
-	firstDateUrl="http://www.drikpanchang.com/tamil/tamil-month-panchangam.html?date=01/01/2023"
+	firstDateUrl="http://www.drikpanchang.com/tamil/tamil-month-panchangam.html?date=16/07/2024"
 	firstDateUrl= r"https://www.drikpanchang.com/tamil/tamil-month-panchangam.html?date=01/01/2023&time-format=24plushour"
 
 	browser.get(firstDateUrl)
-	browser.execute_script("handlePanchangArithmeticOptionClick('suryasiddhanta', true)") # switches to Vakyam panchangam
+	browser.execute_script("dpSettingsToolbar.handlePanchangArithmeticOptionClick('suryasiddhanta', true)") # switches to Vakyam panchangam
 	
 	#browser.execute_script("handleTimeFormatOptionClick('24plushour')")
 	#dont use this--- #browser.execute_script("switchToMoArith()")  # switches to Thiru Ganita panchangam
@@ -38,12 +43,12 @@ def main():
 # Get started
 	fname = 'drikCalendarPHX-Vakyam.txt'
 	with open(fname, 'w') as outf:
-		dateObj = datetime.datetime(2023, 11, 8)    # SET Start Date (yyyy, mm, dd)
+		dateObj = datetime.datetime(2024, 9, 12)    # SET Start Date (yyyy, mm, dd)
 		nextDate = dateObj.strftime("%d/%m/%Y")
 		outf.write('Start-Time: ' + datetime.datetime.now().strftime("%d/%m/%Y %H:%M:%S"))
 		outf.write("\n\nDate, Tithi, Nakshatra, Skipped Tithi, Skipped Nakshatra, \n")
 
-		while nextDate != "01/01/2024":                 # SET End Date (dd/mm/yyyy)
+		while nextDate != "01/01/2025":                 # SET End Date (dd/mm/yyyy)
 			time.sleep(4.0)
 			outf.write(nextDate + ', ')
 			url = "http://www.drikpanchang.com/tamil/tamil-month-panchangam.html?date=" + nextDate + "&time-format=24plushour"

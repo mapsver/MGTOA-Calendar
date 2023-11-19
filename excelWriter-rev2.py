@@ -649,7 +649,7 @@ def ConvertInfoToSanskrit(inputStr):
 	if (inputStr == "Poosam"):
 		return "Pushya"
 	if (inputStr == "Ayilyam"):
-		return "Asresha"
+		return "Aslesha"
 	if (inputStr == "Magam"):
 		return "Magha"
 	if (inputStr == "Pooram"):
@@ -706,7 +706,7 @@ def ConvertInfoToSanskrit(inputStr):
 	if (inputStr == "Panjami"):
 		return "Panchami"
 	if (inputStr == "Shasti"):
-		return "Shashti"
+		return "Sashti"
 	if (inputStr == "Sapthami"):
 		return "Saptami"
 	if (inputStr == "Astami"):
