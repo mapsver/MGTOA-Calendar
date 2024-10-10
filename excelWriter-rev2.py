@@ -213,7 +213,7 @@ def addEmptyGreyCellsAtMonthEnd():
 		outputColNum = 0
 	createEmptyGreyCellsInRowUptoCol(WK6_ROW_IDX, outputColNum, 1, '')	
 	sh1.row(WK6_ROW_IDX+5).height_mismatch = True
-	sh1.row(WK6_ROW_IDX+5).height = 345 #5205
+	sh1.row(WK6_ROW_IDX+5).height = 545 #5205
 		
 
 def createEmptyGreyCellsInRowUptoCol(outputRowNum, outputColNum, uptocolNum, rowStartDate):
@@ -249,6 +249,8 @@ def createMonthHeader(dateObj):
 	sh1.write(MONTH_NAME_ROWNUM, 0, currMonthName + ' ' + currYear, monthrowstyle)
 	for i in range(1,7):
 		sh1.write(MONTH_NAME_ROWNUM, i, '', monthrowstyle)
+	sh1.row(MONTH_NAME_ROWNUM).height_mismatch = True
+	sh1.row(MONTH_NAME_ROWNUM).height = 1215 #5205
 	createDayNamesRow()
 
 def createDayNamesRow():
@@ -621,7 +623,7 @@ def WriteToExcel():
 	for i in range(outputRowNum+1, globRow+6):
 		sh1.write(i, globCol, "", currBotRowstyle)
 	sh1.row(globRow+5).height_mismatch = True
-	sh1.row(globRow+5).height = 680 #5205
+	sh1.row(globRow+5).height = 545 #5205
 
 	# reset global values
 	globTithiInfo = ""
