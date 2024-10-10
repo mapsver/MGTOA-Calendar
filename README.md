@@ -18,7 +18,9 @@
 	- The extraction may stall at times which requires manual re-extraction from the stalled date.. change the start/end dates and re-run.
 	- if extraction was run multiple times, make sure the data is consolidated into a single txt file called 'drikCalendarPHX-Vakyam.txt'.
 - Execute excelWriter-rev2.py for excel output. 
-- Save .xls file as .xlsx	- Requires all the input to be in a single txt file in the same dir called 'drikCalendarPHX-Vakyam.txt'.
+	- Requires all the input to be in a single txt file in the same dir called 'drikCalendarPHX-Vakyam.txt'.
+	- no changes required to this script
+	- Open .xls output file in excel and Save as .xlsx	
 
 - Archive the extracted .txt and final .xlsx in the OutputArchive dir
 
