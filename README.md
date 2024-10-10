@@ -34,3 +34,6 @@
 - Create a venv and requirements.txt
 - Fix bug: Correct "upto Full Night" with "Full Night"
 	- some how when writing "upto Full Night" .. some cells are missing the word "Night" (noticed only for Tithi)
+
+*****Useful info*****
+- row-height: 1pt in excel = 20pts in code (eg: header-row-height: 60.75 = 1215)
