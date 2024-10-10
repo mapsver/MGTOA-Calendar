@@ -177,8 +177,8 @@ def createInfoBox():
 	firstRowIdx = WK6_ROW_IDX
 	for i,content in reversed(list(enumerate(infoBoxContent))):
 		currCellStyle = copy.deepcopy(emptyWhitestyle)
-		currCellStyle.borders.bottom_colour = xlwt.Style.colour_map['gray25']
-		currCellStyle.borders.top_colour = xlwt.Style.colour_map['gray25']
+		currCellStyle.borders.bottom_colour = xlwt.Style.colour_map['white']
+		currCellStyle.borders.top_colour = xlwt.Style.colour_map['white']
 		sh1.merge(firstRowIdx+i, firstRowIdx+i, LASTROW_INFOBOX_COLIDX,LASTROW_INFOBOX_COLIDX+1)
 		sh1.write_rich_text(firstRowIdx+i, LASTROW_INFOBOX_COLIDX, infoBoxContent[i], currCellStyle)
 		sh1.write(firstRowIdx+i, LASTROW_INFOBOX_COLIDX+1, "", currCellStyle)
@@ -337,11 +337,11 @@ def SetupFontsAndCellStyle():
 	global datestyle, weekenddatestyle, greyedoutdatestyle, weekendgreyedoutdatestyle
 	global nakstyle, tithistyle, weekendnakstyle, weekendtithistyle, fbLinkstyle
 	xlwt.add_palette_colour("weekday_bgColor", 0x20)
-	wbook.set_colour_RGB(0x20, 248, 203, 173)
+	wbook.set_colour_RGB(0x20, 254, 241, 184)
 	xlwt.add_palette_colour("fblink_bgColor", 0x21)
 	wbook.set_colour_RGB(0x21, 48, 84, 150)
 	xlwt.add_palette_colour("weekend_bgColor", 0x22)
-	wbook.set_colour_RGB(0x22, 252, 228, 214)
+	wbook.set_colour_RGB(0x22, 248, 213, 104)
 	xlwt.add_palette_colour("daysRow_bgColor", 0x23)
 	wbook.set_colour_RGB(0x23, 131, 60, 12)
 	xlwt.add_palette_colour("greydate_fontColor", 0x24)
