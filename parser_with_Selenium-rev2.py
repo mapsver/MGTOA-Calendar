@@ -19,8 +19,7 @@ lookupTagSet = ['Tithi', 'Nakshathram', 'Skipped Tithi', 'Skipped Nakshathram']
 #browser = webdriver.Chrome(ChromeDriverManager().install())
 
 options = webdriver.ChromeOptions()
-s = Service(ChromeDriverManager().install())
-browser = webdriver.Chrome(service=s, options=options)
+browser = webdriver.Chrome(options=options)
 
 def main():
 
@@ -30,8 +29,8 @@ def main():
 	time.sleep(0.5)
 
 # Switch to Vakyam
-	firstDateUrl="http://www.drikpanchang.com/tamil/tamil-month-panchangam.html?date=16/07/2024"
-	firstDateUrl= r"https://www.drikpanchang.com/tamil/tamil-month-panchangam.html?date=01/01/2023&time-format=24plushour"
+	#firstDateUrl="http://www.drikpanchang.com/tamil/tamil-month-panchangam.html?date=16/07/2024"
+	firstDateUrl= r"https://www.drikpanchang.com/tamil/tamil-month-panchangam.html?date=01/01/2025&time-format=24plushour"
 
 	browser.get(firstDateUrl)
 	browser.execute_script("dpSettingsToolbar.handlePanchangArithmeticOptionClick('suryasiddhanta', true)") # switches to Vakyam panchangam
@@ -43,12 +42,12 @@ def main():
 # Get started
 	fname = 'drikCalendarPHX-Vakyam.txt'
 	with open(fname, 'w') as outf:
-		dateObj = datetime.datetime(2024, 9, 12)    # SET Start Date (yyyy, mm, dd)
+		dateObj = datetime.datetime(2025, 10, 31)    # SET Start Date (yyyy, mm, dd)
 		nextDate = dateObj.strftime("%d/%m/%Y")
 		outf.write('Start-Time: ' + datetime.datetime.now().strftime("%d/%m/%Y %H:%M:%S"))
 		outf.write("\n\nDate, Tithi, Nakshatra, Skipped Tithi, Skipped Nakshatra, \n")
 
-		while nextDate != "01/01/2025":                 # SET End Date (dd/mm/yyyy)
+		while nextDate != "01/01/2026":                 # SET End Date (dd/mm/yyyy)
 			time.sleep(4.0)
 			outf.write(nextDate + ', ')
 			url = "http://www.drikpanchang.com/tamil/tamil-month-panchangam.html?date=" + nextDate + "&time-format=24plushour"
