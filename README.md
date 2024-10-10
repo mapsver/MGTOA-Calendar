@@ -31,5 +31,6 @@
 - Replace "until Full Night" with "Full Night"
 
 *****Automation Todos*****
+- Create a venv and requirements.txt
 - Fix bug: Correct "upto Full Night" with "Full Night"
 	- some how when writing "upto Full Night" .. some cells are missing the word "Night" (noticed only for Tithi)
