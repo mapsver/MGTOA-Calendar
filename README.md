@@ -2,7 +2,7 @@
 
 ***Help doc***
 
-- Currenly works on Python 3.3
+- Currenly works on Python 3.10.11
 - The work is done by 2 scripts: one which does the data extraction from drikpanchang and the other which constructs the excel spreadheet using the extracted data. They need to be executed manually one after the other.
 - Assumptions
 	- Sript uses tamil Vakya panchangam from drikpanchang.com
