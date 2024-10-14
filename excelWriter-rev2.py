@@ -13,6 +13,9 @@ import ctypes
 import datetime
 import xlwt
 import copy
+from PIL import Image, ImageDraw
+from io import BytesIO
+import calendar
 
 def Mbox(title, text, style):
 	ctypes.windll.user32.MessageBoxW(0, text, title, style)
@@ -94,8 +97,9 @@ def main():
 			if dateObj.day == 1:
 				if dateObj.month != 1:
 					addEmptyGreyCellsAtMonthEnd()
-					populateLastRowDefaults()
-					pass
+					populateLastRowDefaults()					
+					addNextMonthMiniCalendar(dateObj)	
+					pass				
 				setupNewMonth(dateObj)
 				addEmptyGreyCellsAtMonthBegn(dateObj, currDay if currDay else 31)
 			getCellLocation(dateObj)
@@ -143,11 +147,50 @@ def main():
 	##wbook.save("excel-2015-TGanita.xls")
 	wbook.save("excel-" + currYear + "-Vakyam.xls")
 
+def addNextMonthMiniCalendar(newDateObj):
+	global sh1
+	img = Image. new('RGB', (115, 125), color = (255,255,255))
+	d = ImageDraw.Draw(img)
+	x = 10
+	y = 10
+	rowWidth = 13
+	# month&year name.. text needs to be centered
+	d.text((x,y), newDateObj.strftime("%B %Y"), fill=(10,10,10))
+	# week day-letters row
+	y += rowWidth
+	x = 10
+	xOffset = 15
+	dayStrs = "SMTWTFS"
+	for s in dayStrs:
+		d.text((x,y), s, fill=(10,10,10))
+		x+= xOffset
+	y += rowWidth
+	d.line([(5,y),(110,y)], fill =(10,10,10), width = 0)
+	# add the dates starting at the correct day-offset
+	wd = newDateObj.weekday()
+	x = 10 + (0 if wd==6 else wd+1)*xOffset
+	y += rowWidth/2
+	daysInMonth = calendar.monthrange(newDateObj.year, newDateObj.month)[1]
+	dateStrs = [str(d) for d in range(1,daysInMonth+1)]
+	for s in dateStrs:
+		if x > 110:
+			x = 10
+			y += rowWidth 
+		tmpx = x if len(s) == 1 else x-3
+		d.text((tmpx,y), s, fill=(10,10,10))
+		x+= xOffset    
+	fo = BytesIO()
+	img.save(fo, format='bmp')
+	sh1.insert_bitmap_data(fo.getvalue(),32,4)
+	pass
+
 def addFinishingTouchesForDec():
 	global globCol
 	globCol = -1 if globCol == 6 else globCol
 	addEmptyGreyCellsAtMonthEnd()
 	populateLastRowDefaults()
+	nextJanDateObj = datetime.datetime(int(currYear)+1,1,1)
+	addNextMonthMiniCalendar(nextJanDateObj)
 
 def populateLastRowDefaults():
 	createWhiteCells()
@@ -155,7 +198,9 @@ def populateLastRowDefaults():
 
 def createWhiteCells():
 	global sh1, emptyWhitestyle
-	sh1.merge(WK6_ROW_IDX, WK6_ROW_IDX+5, LASTROW_WHITECELLS_COLIDX,LASTROW_WHITECELLS_COLIDX+2)
+	sh1.merge(WK6_ROW_IDX, WK6_ROW_IDX+5, LASTROW_WHITECELLS_COLIDX,LASTROW_WHITECELLS_COLIDX+1)
+	sh1.write(WK6_ROW_IDX, LASTROW_WHITECELLS_COLIDX, '', emptyWhitestyle)	
+	sh1.merge(WK6_ROW_IDX, WK6_ROW_IDX+5, LASTROW_WHITECELLS_COLIDX+2,LASTROW_WHITECELLS_COLIDX+2)
 	sh1.write(WK6_ROW_IDX, LASTROW_WHITECELLS_COLIDX, '', emptyWhitestyle)
 	for row in range(WK6_ROW_IDX, WK6_ROW_IDX+6):
 		for col in range(LASTROW_WHITECELLS_COLIDX,LASTROW_WHITECELLS_COLIDX+3):
