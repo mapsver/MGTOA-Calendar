@@ -42,12 +42,12 @@ def main():
 # Get started
 	fname = 'drikCalendarPHX-Vakyam.txt'
 	with open(fname, 'w') as outf:
-		dateObj = datetime.datetime(2025, 10, 31)    # SET Start Date (yyyy, mm, dd)
+		dateObj = datetime.datetime(2026,11,5)    # SET Start Date (yyyy, mm, dd)
 		nextDate = dateObj.strftime("%d/%m/%Y")
 		outf.write('Start-Time: ' + datetime.datetime.now().strftime("%d/%m/%Y %H:%M:%S"))
 		outf.write("\n\nDate, Tithi, Nakshatra, Skipped Tithi, Skipped Nakshatra, \n")
 
-		while nextDate != "01/01/2026":                 # SET End Date (dd/mm/yyyy)
+		while nextDate != "01/01/2027":                 # SET End Date (dd/mm/yyyy)
 			time.sleep(4.0)
 			outf.write(nextDate + ', ')
 			url = "http://www.drikpanchang.com/tamil/tamil-month-panchangam.html?date=" + nextDate + "&time-format=24plushour"
