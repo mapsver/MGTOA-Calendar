@@ -26,10 +26,10 @@
 
 *****BUGS: Fix them manually*****
 - Check for any sheets with the string 'ERROR'.
-- In the final Excel output, look for cells that have 5 rows filled. In cases where the words are long it may spill over into adjacent cells which are subsequently overwritten.
+- In the final Excel output, look for cells that have 5 columns filled. In cases where the words are long it may spill over into adjacent cells which are subsequently overwritten.
 - Quick lookup for long content. Open 'drikCalendarPHX-Vakyam.txt' and look for lines longer than 80chars. These are potential candidates for spillovers.
 - Replace "until Full Night" with "Full Night"
-- Resize the mini-calendars by setting width & height to 100%
+- Resize the mini-calendars by setting width & height to 100% (right-click Reset Picture & Size, then center it in the last cell in column E)
 
 *****Automation Todos*****
 - Create a venv and requirements.txt
